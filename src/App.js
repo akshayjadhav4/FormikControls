@@ -1,5 +1,6 @@
 import React from "react";
-import CourseEnrollmentForm from "./components/Course Enrollment Form/CourseEnrollmentForm";
+import FieldArrayInput from "./components/DynamicFields/FieldArrayInput";
+// import CourseEnrollmentForm from "./components/Course Enrollment Form/CourseEnrollmentForm";
 // import RegistrationForm from "./components/Registration Form/RegistrationForm";
 // import FormikContaier from "./components/FormikContaier";
 // import LoginForm from "./components/Login Form/LoginForm";
@@ -10,7 +11,8 @@ function App() {
       {/* <FormikContaier /> */}
       {/* <LoginForm/> */}
       {/* <RegistrationForm/> */}
-      <CourseEnrollmentForm/>
+      {/* <CourseEnrollmentForm/> */}
+      <FieldArrayInput/>
     </div>
   );
 }
