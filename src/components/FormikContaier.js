@@ -11,16 +11,25 @@ function FormikContaier() {
     {key : 'Option 4',value : '4'},
     {key : 'Option 5',value : '5'},
   ]
+  const radioOptions = [
+    {key : 'Option 1',value : '1'},
+    {key : 'Option 2',value : '2'},
+    {key : 'Option 3',value : '3'},
+    {key : 'Option 4',value : '4'},
+    {key : 'Option 5',value : '5'},
+  ]
   const initialValues = {
     email : "",
     description : "",
-    selectOption : ''
+    selectOption : '',
+    radioOption : ''
   };
 
   const validationSchema = Yup.object({
     email : Yup.string().email('Inavalid email format').required('Required'),
     description : Yup.string().required('Required'),
-    selectOption : Yup.string().required('Required')
+    selectOption : Yup.string().required('Required'),
+    radioOption : Yup.string().required('Required'),
   });
 
   const onSubmit = (values) => {
@@ -46,7 +55,18 @@ function FormikContaier() {
             label="Description"
             name="description"
           />
-          <FormikControl  control='select'  label='Select Option' name='selectOption' options={dropdownOptions}/>
+          <FormikControl
+            control="select"
+            label="Select Option"
+            name="selectOption"
+            options={dropdownOptions}
+          />
+          <FormikControl
+            control="radio"
+            label="Radio Choice"
+            name="radioOption"
+            options={radioOptions}
+          />
           <button type="submit" className="waves-effect waves-light btn">
             Submit
           </button>
