@@ -4,6 +4,7 @@ import Textarea from "./Textarea/Textarea";
 import Select from "./Select/Select";
 import RadioButtons from "./Radio Buttons/RadioButtons";
 import CheckboxGroup from "./Checkbox Group/CheckboxGroup";
+import DatePicker from "./Date Picker/DatePicker";
 
 //decides which form field to render dependingon passed prop.
 function FormikControl({ control, ...rest }) {
@@ -19,7 +20,7 @@ function FormikControl({ control, ...rest }) {
     case "checkbox":
       return <CheckboxGroup {...rest} />;
     case "date":
-
+      return <DatePicker {...rest}/>
     default:
       return null;
   }
