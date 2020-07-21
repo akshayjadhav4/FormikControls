@@ -18,11 +18,17 @@ function FormikContaier() {
     {key : 'Option 4',value : '4'},
     {key : 'Option 5',value : '5'},
   ]
+  const checkboxOptions = [
+    {key : 'Option One',value : 'One'},
+    {key : 'Option Two',value : 'Two'},
+    {key : 'Option Three',value : 'Three'},
+  ]
   const initialValues = {
     email : "",
     description : "",
     selectOption : '',
-    radioOption : ''
+    radioOption : '',
+    checkboxOption : [], //checkbox require array 
   };
 
   const validationSchema = Yup.object({
@@ -30,6 +36,7 @@ function FormikContaier() {
     description : Yup.string().required('Required'),
     selectOption : Yup.string().required('Required'),
     radioOption : Yup.string().required('Required'),
+    checkboxOption : Yup.array().required('Required'),
   });
 
   const onSubmit = (values) => {
@@ -66,6 +73,12 @@ function FormikContaier() {
             label="Radio Choice"
             name="radioOption"
             options={radioOptions}
+          />
+           <FormikControl
+            control="checkbox"
+            label="Checkbox Group"
+            name="checkboxOption"
+            options={checkboxOptions}
           />
           <button type="submit" className="waves-effect waves-light btn">
             Submit
